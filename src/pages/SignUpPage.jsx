@@ -223,7 +223,17 @@ export const SignUpPage = () => {
 
           {/* Checkbox */}
           <div className="pt-1">
-        
+            <label className="flex items-center gap-2 cursor-pointer select-none text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={agreeTerms}
+                onChange={(e) => { setAgreeTerms(e.target.checked); setAgreeError(""); }}
+                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span>
+                I agree to the <Link to="/terms" className="text-blue-600 hover:underline">Terms & Conditions</Link>
+              </span>
+            </label>
             {agreeError && (
               <p className="mt-1 text-xs text-red-500 font-medium">{agreeError}</p>
             )}
